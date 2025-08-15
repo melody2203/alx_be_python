@@ -1,7 +1,7 @@
 class BankAccount:
     BALANCE_FILE = "balance.txt"  # File to store balance
 
-    def __init__(self, account_balance):
+    def __init__(self, account_balance=0):
         try:
             # Try loading the last saved balance
             with open(self.BALANCE_FILE, "r") as f:
