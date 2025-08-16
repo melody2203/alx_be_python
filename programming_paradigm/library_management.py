@@ -21,8 +21,7 @@ class Library:
                 else:
                     return f"'{title}' is already checked out."
         return f"'{title}' is not in the library."
-
-
+    
     def return_book(self, title):
         for book in self.__books:
             if book.title == title:
