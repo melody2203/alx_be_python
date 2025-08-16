@@ -25,13 +25,13 @@ class Book:
 
 class Library:
     def __init__(self):
-        self.__books = []
+        self._books = []
 
     def add_book(self, book):
-        self.__books.append(book)
+        self._books.append(book)
 
     def check_out_book(self, title):
-        for book in self.__books:
+        for book in self._books:
             if book.title == title:
                 if not book._is_checked_out:
                     book._is_checked_out = True
@@ -51,6 +51,6 @@ class Library:
         return f"'{title}' is not in the library."
 
     def list_available_books(self):
-        available = [str(book) for book in self.__books if not book._is_checked_out]
+        available = [str(book) for book in self._books if not book._is_checked_out]
         return available if available else ["No books available."]
 
