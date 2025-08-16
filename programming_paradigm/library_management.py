@@ -5,6 +5,24 @@ class Book:
         self._is_checked_out = False
     def __str__(self):
         return f"{self.title} by {self.author}"
+    # Method to check out this book
+    def check_out(self):
+        if not self._is_checked_out:
+            self._is_checked_out = True
+            return True
+        return False
+
+    # Method to return this book
+    def return_book(self):
+        if self._is_checked_out:
+            self._is_checked_out = False
+            return True
+        return False
+
+    # Method to check availability
+    def is_available(self):
+        return not self._is_checked_out
+
 class Library:
     def __init__(self):
         self.__books = []
